@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Коментарии {% endblock title %}
+{% block  main_content %}
+<table>
+    <thead>
+        <th> Коментарии </th>
+    </thead>
+    <tbody>
+        {% for comment in comments %}
+        <tr>
+            <td>{{comment.title}}</td>
+            <td>{{comment.text}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock main_content %}

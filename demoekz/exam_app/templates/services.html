@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Услуги {% endblock title %}
+{% block  main_content %}
+<table>
+    <thead>
+        <th>Услуга</th>
+        <th>Услуга</th>
+    </thead>
+    <tbody>
+        {% for service in services %}
+        <tr>
+            <td>{{service.name}}</td>
+            <td>{{service.price}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>Страница:{{page_obj.number}}</p>
+{% if page_obj.has_next %}
+<a href="?page={{page_obj.next_page_number}}">Дальше</a>
+<{% endif %}
+{% endblock main_content %}

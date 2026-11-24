@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Коментарии {% endblock title %}
+{% block main_content %}
+{% for message in messages %}
+    <p>{{message}}</p>
+{% endfor %}
+<form action="{% url "commentform"%}" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="отправить">
+</form>
+{% endblock main_content %}
